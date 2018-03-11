@@ -25,6 +25,12 @@ namespace TechJobs.Controllers
             return View(result);
         }
 
+        public IActionResult Thing(NewJobViewModel newJobViewModel)
+        {
+            Location thing = jobData.Locations.Find(newJobViewModel.LocationID);
+            return View(thing);
+        }
+
         public IActionResult New()
         {
             NewJobViewModel newJobViewModel = new NewJobViewModel();
@@ -37,7 +43,24 @@ namespace TechJobs.Controllers
             // TODO #6 - Validate the ViewModel and if valid, create a 
             // new Job and add it to the JobData data store. Then
             // redirect to the Job detail (Index) action/view for the new Job.
+      
+                Job newJob = new Job
+                {
+                    Name = newJobViewModel.Name,
+                    Employer = jobData.Employers.Find(newJobViewModel.EmployerID),
+                    CoreCompetency = jobData.CoreCompetencies.Find(newJobViewModel.CompetencyID),
+                    PositionType = jobData.PositionTypes.Find(newJobViewModel.PositionID),
+                    Location = jobData.Locations.Find(newJobViewModel.LocationID)
 
+                };
+            if (ModelState.IsValid)
+            {
+
+                jobData.Jobs.Add(newJob);
+                int jobId = newJob.ID;
+
+                return Redirect("/Job?id=" + jobId);
+            }
             return View(newJobViewModel);
         }
     }
