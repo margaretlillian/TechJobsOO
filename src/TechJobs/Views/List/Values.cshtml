@@ -1,15 +1,14 @@
 ﻿@model TechJobs.ViewModels.JobFieldsViewModel
 
-<h1>@Model.Title</h1>
+<h2>@Model.Title</h2>
 
-<table>
+<ul>
 @foreach (var field in Model.Fields)
 {
-    <tr>
-        <td><a asp-controller="List" 
+    <li><a asp-controller="List" 
                asp-action="Jobs" 
                asp-route-column="@Model.Column" 
-               asp-route-value="@field.Value">@field.Value</a></td>
-    </tr>  
+               asp-route-value="@field.Value">@field.Value</a>
+    </li>  
 }   
-</table>
+</ul>

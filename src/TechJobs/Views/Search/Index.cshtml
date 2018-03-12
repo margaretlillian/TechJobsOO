@@ -1,6 +1,6 @@
 ﻿@model TechJobs.ViewModels.SearchJobsViewModel
 
-<h1>@Model.Title</h1>
+<h2>@Model.Title</h2>
 
 <form action="/Search/Results">
     <p>
@@ -10,6 +10,7 @@
 
             <span>
                 <input type="radio"
+                       class="radio"
                        name="Column"
                        id="@column"
                        value="@column" 
@@ -27,34 +28,32 @@
     <input type="submit" value="Search" />
 </form>
 
-<hr />
 
 @if (Model.Jobs != null)
 {
 
-    <h3>@Model.Jobs.Count Result(s)</h3>
+    <h3 id="search-results">@Model.Jobs.Count Result(s)</h3>
 
     @foreach (var job in Model.Jobs)
     {
         <table class="job-listing">
             <tr>
-                <td>Name</td>
-                <td>@job.Name</td>
+                <th colspan="2"><a href="/Job?id=@job.ID">@job.Name</a></th>
             </tr>
             <tr>
-                <td>Employer</td>
+                <td class="category">Employer</td>
                 <td>@job.Employer</td>
             </tr>
             <tr>
-                <td>Location</td>
+                <td class="category">Location</td>
                 <td>@job.Location</td>
             </tr>
             <tr>
-                <td>Skill</td>
+                <td class="category">Skill</td>
                 <td>@job.CoreCompetency</td>
             </tr>
             <tr>
-                <td>Position Type</td>
+                <td class="category">Position Type</td>
                 <td>@job.PositionType</td>
             </tr>
         </table>

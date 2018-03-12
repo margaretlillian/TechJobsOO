@@ -1,6 +1,6 @@
 ﻿@model TechJobs.ViewModels.SearchJobsViewModel
 
-<h1>@Model.Title</h1>
+<h2>@Model.Title</h2>
 
 @if (Model.Jobs != null)
 {
@@ -11,23 +11,22 @@
     {
         <table class="job-listing">
             <tr>
-                <td>Name</td>
-                <td>@job.Name</td>
+                <th colspan="2">@job.Name</th>
             </tr>
             <tr>
-                <td>Employer</td>
+                <td class="category">Employer</td>
                 <td>@job.Employer</td>
             </tr>
             <tr>
-                <td>Location</td>
+                <td class="category">Location</td>
                 <td>@job.Location</td>
             </tr>
             <tr>
-                <td>Skill</td>
+                <td class="category">Skill</td>
                 <td>@job.CoreCompetency</td>
             </tr>
             <tr>
-                <td>Position Type</td>
+                <td class="category">Position Type</td>
                 <td>@job.PositionType</td>
             </tr>
         </table>

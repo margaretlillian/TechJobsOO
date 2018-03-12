@@ -25,12 +25,7 @@ namespace TechJobs.Controllers
             return View(result);
         }
 
-        public IActionResult Thing(NewJobViewModel newJobViewModel)
-        {
-            Location thing = jobData.Locations.Find(newJobViewModel.LocationID);
-            return View(thing);
-        }
-
+        
         public IActionResult New()
         {
             NewJobViewModel newJobViewModel = new NewJobViewModel();

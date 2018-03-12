@@ -1,68 +1,110 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    background: url('../images/laptop.jpg') no-repeat fixed;
+    background-size: cover;
+    font: 1.8em "century gothic", sans-serif;
+    color: rgb(61, 52, 100);
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+a {
+    color: rgb(39, 145, 181);
+    text-decoration: none;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
+h1, h1 a {
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    color: rgb(0,0,0);
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+h2 {
+    font-size: 1.5em;
+    color: rgb(49, 119, 111);
+    /* border-bottom: 1px dotted rgb(49, 119, 111); */
+    text-align: center;
+    padding: 1px;
+    margin: 2px;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"]
-{
-    width: 100%;
+h3 {
+    color: rgb(128, 128, 128);
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-  /* Hide captions */
-  .carousel-caption {
-    display: none
-  }
+h2, h3 {
+    font-weight: lighter;
 }
 
-.body-content {
-    margin-top: 72px;
+ul {
+    list-style-type: square;
 }
 
-td, th {
+li {
+    margin: 12px;
+}
+
+input, textarea, select, option {
+    font: 1em "century gothic", sans-serif;
+    background: rgb(181, 217, 226);
+    color: rgb(0,0,0);
+    border: 1px solid rgb(60, 147, 136);
+    border-radius: 8px;
+    opacity: 0.6;
+}
+
+.formgroup input, .formgroup select {width: 100%;}
+
+label {width: 27%;}
+
+table {
+    background: rgba(190, 190, 190, 0.3);
+    border-radius: 25px;
+    width: 90%;
+    margin: 16px;
     padding: 10px;
 }
 
-tr:nth-child(odd) {
-    background-color: #e4e4e4;
+th {
+    text-align: center;
+    letter-spacing: 6px;
+    color: rgb(68, 57, 48);
 }
 
-table.job-listing {
-    margin: 30px auto;
-    border: 1px solid #e4e4e4;
-    width: 80%;
+tr {
+    height: 2em;
 }
 
-table.job-listing td:first-child {
-    font-weight: bold;
+
+section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    padding: 10px;
 }
 
-table.job-listing td:last-child {
-    width: 80%;
+div, div ul {
+    margin: 0;
+    padding: 0;
 }
 
-label {
-    margin-right: 15px;
+#navigation {
+    width: 24%;
+    float: left;
+    position: fixed;
+}
+
+#content {
+    width: 70%;
+    float: right;
+}
+
+.category {
+    width: 27%;
+}
+
+#submit {
+    width: 30%;
+    margin-left: 15px;
+}
+
+#search-results {
+    margin-top: 40px;
+    border-top: 1px solid rgb(190, 190, 190);
 }

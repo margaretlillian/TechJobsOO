@@ -1,35 +1,58 @@
 ﻿@model TechJobs.ViewModels.NewJobViewModel
-
 <div asp-validation-summary="All"></div>
+<h2> Add New Job</h2>
 
 <form asp-controller="Job" asp-action="New" method="post">
-    <div class="form-group">
-        <label asp-for="Name"></label>
-        <input class="form-control" asp-for="Name" />
-    </div>
-    <div class="form-group">
-        <label asp-for="EmployerID"></label>
-        <select asp-for="EmployerID" asp-items="Model.Employers"></select>
-    </div>
+    <table>
 
-    @{
-        // TODO #5 - Create <select> dropdowns for other job fields (outside of this @{ } block)
-    }
+        <tr class="form-group">
+            <td>
+                <label asp-for="Name"></label>
+            </td>
+            <td>
+                <input class="form-control" asp-for="Name" />
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td><label asp-for="EmployerID"></label></td>
+            <td><select asp-for="EmployerID" asp-items="Model.Employers"></select></td>
+        </tr>
 
-    <div class="form-group">
-        <label asp-for="LocationID"></label>
-        <select asp-for="LocationID" asp-items="Model.Locations"></select>
-    </div>
-    <div class="form-group">
-        <label asp-for="CompetencyID"></label>
-        <select asp-for="CompetencyID" asp-items="Model.CoreCompetencies"></select>
-    </div>
+        @{
+            // TODO #5 - Create <select> dropdowns for other job fields (outside of this @{ } block)
+        }
 
-    <div class="form-group">
-        <label asp-for="PositionID"></label>
-        <select asp-for="PositionID" asp-items="Model.PositionTypes"></select>
-    </div>
+        <tr class="form-group">
+            <td>
+                <label asp-for="LocationID"></label>
+            </td>
+            <td>
+                <select asp-for="LocationID" asp-items="Model.Locations"></select>
+            </td>
+        </tr>
+        <tr class="form-group">
+            <td>
+                <label asp-for="CompetencyID"></label>
+            </td>
+            <td>
+                <select asp-for="CompetencyID" asp-items="Model.CoreCompetencies"></select>
+            </td>
+        </tr>
+
+        <tr class="form-group">
+            <td>
+                <label asp-for="PositionID"></label>
+            </td>
+            <td>
+                <select asp-for="PositionID" asp-items="Model.PositionTypes"></select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" id="submit" value="Add Job" />
+            </td>
+        </tr>
 
 
-    <input type="submit" value="Add Job" />
+    </table>
 </form>
